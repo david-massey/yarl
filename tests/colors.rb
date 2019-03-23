@@ -1,4 +1,4 @@
-require '../lib/yarl'
+require 'yarl'
 
 module Mocks
   class Klass

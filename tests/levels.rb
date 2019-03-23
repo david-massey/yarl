@@ -1,4 +1,4 @@
-require '../lib/yarl'
+require 'yarl'
 
 logger = YARL.new color: :green
 

@@ -1,5 +1,5 @@
 require 'logger'
-require_relative '../lib/yarl'
+require 'yarl'
 
 times = 1_000_000
 

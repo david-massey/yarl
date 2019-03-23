@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'yarl'
   spec.version       = YARL::VERSION
   spec.authors       = ['David Massey']
-  spec.email         = ['david@darma.company']
+  spec.email         = ['ominousskitter@protonmail.com']
   spec.summary       = %q{Logger extension that provides colors and clean, default formatting.}
   spec.description   = %q{Yet Another Ruby Logger (YARL) extends ruby/logger to provide header colors and a severity level below DEBUG. The default formatting has been changed to provide a cleaner (subjective) look.}
   spec.homepage      = "https://github.com/david-massey/yarl"
