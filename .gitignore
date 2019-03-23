@@ -1,0 +1,7 @@
+*.gem
+*.rbc
+.bundle
+.config
+Gemfile.lock
+test/tmp
+tmp
