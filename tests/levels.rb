@@ -1,14 +1,15 @@
-require 'yarl'
+require_relative '../lib/yarl'
 
 logger = YARL.new color: :green
 
 def test_levels(logger)
   logger.fatal  "It's just a flesh wound!"
   logger.error  'PC LOAD LETTER'
-  logger.warn   'Danger Will Robinson!'
+  logger.warn   'Here there be dragons!'
+  logger.notice 'In order to build a hyperspatial express route, Earth will be destroyed.'
   logger.info   'The more you know'
-  logger.debug  'Better call Terminex'
-  logger.spam   'Nobody likes spam'
+  logger.debug  'Better call Terminix'
+  logger.spam   "Nobody likes spam\r\n"
 end
 
 puts "YARL logger level defaults to INFO"
