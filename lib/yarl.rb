@@ -64,7 +64,7 @@ class YARL < Logger # Yet Another Ruby Logger
 
     progname = @progname if message == progname
 
-    message.gsub!(@to_hex_regex) {|c| "[%02X]" % c.ord} if @to_hex_regex
+    +message.gsub!(@to_hex_regex) {|c| "[%02X]" % c.ord} if @to_hex_regex
 
     case severity
     when FATAL
