@@ -16,8 +16,11 @@ class YARL < Logger # Yet Another Ruby Logger
   include Severity
 
   def initialize progname = nil, **kwargs
-    destination = kwargs[:destination] || STDOUT
+    destination = kwargs[:destination] || $stdout
     super destination
+
+    buffer = kwargs[:buffer] || false
+    destination.sync = !buffer if destination.respond_to? 'sync'
 
     @progname = progname.nil? ? self.class : progname
     @level    = kwargs[:level] || INFO
