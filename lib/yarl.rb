@@ -19,8 +19,8 @@ class YARL < Logger # Yet Another Ruby Logger
     destination = kwargs[:destination] || $stdout
     super destination
 
-    buffer = kwargs[:buffer] || false
-    destination.sync = !buffer if destination.respond_to? 'sync'
+    buffered = kwargs[:buffered] || false
+    destination.sync = !buffered if destination.respond_to? 'sync'
 
     @progname = progname.nil? ? self.class : progname
     @level    = kwargs[:level] || INFO
