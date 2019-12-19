@@ -23,7 +23,7 @@ class YARL < Logger # Yet Another Ruby Logger
     destination.sync = !buffered if destination.respond_to? 'sync'
 
     @progname = progname.nil? ? self.class : progname
-    @level    = kwargs[:level] || INFO
+    level     = kwargs[:level] || INFO
 
     # Header colors
     color       =       text_color(kwargs[:color] || kwargs[:header])
