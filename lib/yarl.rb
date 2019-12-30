@@ -22,9 +22,9 @@ class YARL < Logger # Yet Another Ruby Logger
     buffered = kwargs[:buffered] || false
     destination.sync = !buffered if destination.respond_to? 'sync'
 
-    @progname = progname.nil? ? self.class : progname
-    level     = kwargs[:level] || INFO
-
+    @progname   = progname.nil? ? self.class : progname
+    self.level  = kwargs[:level] || INFO
+    
     # Header colors
     color       =       text_color(kwargs[:color] || kwargs[:header])
     background  = background_color(kwargs[:background])
@@ -96,6 +96,7 @@ class YARL < Logger # Yet Another Ruby Logger
   # Add to level setter
   def level= severity
     severity = severity.to_s if severity.is_a?(Symbol)
+    severity.downcase! if severity.is_a?(String)
 
     case severity
     when 'notice'

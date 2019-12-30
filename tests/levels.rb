@@ -1,6 +1,6 @@
 require_relative '../lib/yarl'
 
-logger = YARL.new color: :green
+logger = YARL.new 'YARL Defalut Level', color: :green
 
 def test_levels(logger)
   logger.fatal  "It's just a flesh wound!"
@@ -21,4 +21,7 @@ test_levels logger
 
 puts "\nAfter level changes to spam"
 logger.level = :spam
+test_levels logger
+
+logger = YARL.new 'YARL Initialized to SPAM', color: :cyan, level: 'SPAM'
 test_levels logger
