@@ -96,7 +96,7 @@ class YARL < Logger # Yet Another Ruby Logger
   # Add to level setter
   def level= severity
     severity = severity.to_s if severity.is_a?(Symbol)
-    severity.downcase! if severity.is_a?(String)
+    severity = severity.downcase if severity.is_a?(String)
 
     case severity
     when 'notice'
