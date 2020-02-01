@@ -70,7 +70,9 @@ class YARL < Logger # Yet Another Ruby Logger
     progname = @progname if message == progname
 
     message = message.to_s.gsub(@to_hex_regex) {|c| "[%02X]" % c.ord} if @to_hex_regex
-    message = "#{message.slice @message_range}..." if message.size > (@message_range.max + 1)
+    if message.is_a?(String) && message.size > (@message_range.max + 1)
+      message = "#{message.slice @message_range}..."
+    end
 
     case severity
     when FATAL
