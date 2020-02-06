@@ -47,7 +47,8 @@ class YARL < Logger # Yet Another Ruby Logger
       @to_hex_regex = /([\x00-\x19])/o
     end
 
-    @message_range = kwargs[:message_range] || 0...256
+    @message_range = kwargs[:message_range]
+    @message_range ||= 0...512
 
     if kwargs[:formatter].is_a?(Proc)
       @formatter = kwargs[:formatter]
